@@ -43,7 +43,7 @@ export default function Home() {
       <Header />
       <section className={styles.movieList}>
         {movieList.map((movie) => (
-          <MovieThumbnail key={movie.imdbID} poster={movie.Poster} />
+          <MovieThumbnail key={movie.imdbID} poster={movie.Poster} movieId={movie.imdbID} movieData={movie} />
         ))}
       </section>
 
