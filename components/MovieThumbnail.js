@@ -6,22 +6,33 @@ import { useRouter } from "next/navigation";
 
 const MovieThumbnail = ({ poster, movieData, movieId }) => {
   const router = useRouter();
-  const handleNavigation = () => {};
+
+  const handleNavigation = () => {
+    // Pass movieData as state
+    router.push(
+      {
+        pathname: "/movie/details",
+        query: { movieId },
+      },
+      {
+        state: { movieData },
+      }
+    );
+  };
+
   return (
     <div className={styles.moviePoster}>
-       <Link
+      <Link
         href={{
-          pathname: '/movie/details',
-          query: {
-            movieId: movieId
-          }
+          pathname: "/movie/details",
+          query: { data: JSON.stringify(movieData) },
         }}
       >
         <Image
           src={poster}
           height={300}
           width={200}
-          onClick={handleNavigation}
+          // onClick={handleNavigation}
           alt="movie poster"
         ></Image>
       </Link>
