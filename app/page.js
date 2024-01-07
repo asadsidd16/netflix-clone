@@ -11,11 +11,11 @@ export default function Home() {
     grabMovie();
   }, []);
 
-  const grabMovie = async (numberOfMovies = 10) => {
+  const grabMovie = async (numberOfMovies = 8) => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `http://www.omdbapi.com/?s=movie&type=movie&apikey=d6d95cbf&r=json`
+        `http://www.omdbapi.com/?s=movie&type=movie&apikey=${process.env.NEXT_PUBLIC_MOVIE_API}&r=json`
       );
 
       if (!response.ok) {
