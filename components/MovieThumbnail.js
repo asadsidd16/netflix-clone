@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/app/page.module.css";
 import { useRouter } from "next/navigation";
+import main from "@/app/main.module.scss";
 
 const MovieThumbnail = ({ poster, movieData, movieId }) => {
   const router = useRouter();
@@ -21,7 +21,7 @@ const MovieThumbnail = ({ poster, movieData, movieId }) => {
   };
 
   return (
-    <div className={styles.moviePoster}>
+    <div className={main.moviePoster}>
       <Link
         href={{
           pathname: "/movie/details",
