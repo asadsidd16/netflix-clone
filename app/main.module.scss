@@ -1,5 +1,5 @@
 $primary-color: #000000;
-$secondary-color: #c40505;
+$secondary-color: #E50914;
 $white-color: #FFFFFF;
  
 :export {
@@ -54,4 +54,8 @@ $white-color: #FFFFFF;
     padding: 2rem;
     min-height: 100vh;
     background-color: #000000;
+}
+
+.rating_review {
+    margin-right: 2rem;
 }

@@ -1,5 +1,5 @@
 $primary-color: #000000;
-$secondary-color: #c40505;
+$secondary-color: #E50914;
 $white-color: #FFFFFF;
 $main-text: #777;
  
@@ -47,7 +47,44 @@ $main-text: #777;
 .container {
   display: flex;
   flex-direction: row;
+  @media (max-width: 768px) {
+    flex-direction: column;
+ }
 }
+
+.main_container {
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+ }
+}
+
+.description_container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: 3rem;
+  @media (max-width: 768px) {
+    margin-left: 0;
+ }
+}
+
+.movie_text {
+  font-size: 25px;
+  font-weight: 500;
+  color: #FFF;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+ }
+}
+
 
 .container_main_text {
   font-size: 14px;
@@ -71,7 +108,18 @@ $main-text: #777;
   font-weight: 500;
   margin: 1rem 1rem 1rem 0;
   color: #FFF;
+  @media (max-width: 768px) {
+    font-size: 14px;
+ }
+}
+
+.description_box {
+  padding: 1rem 1rem 1rem 0;
   width: 50rem;
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 30rem;
+ }
 }
 
 .rating_box {
@@ -85,26 +133,19 @@ $main-text: #777;
   overflow: hidden;
 }
 
-.image_container {
+.rating_container {
+  margin-top: 1rem;
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  text-align: center; 
+  flex-direction: row;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+ }
 }
 
-.movie_text {
-  font-size: 20px;
-  font-weight: 500;
-  color: #FFF;
-}
 
-.description_container {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin-left: 3rem;
-}
 
 .footer {
   margin-top: 1rem;

@@ -2,6 +2,7 @@
 import movie from "./movie.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ReviewRating from "@/components/ReviewRating";
 
 export default function MovieDetail({ searchParams }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -43,8 +44,8 @@ export default function MovieDetail({ searchParams }) {
         <span className={movie.loader}></span>
       ) : (
         <section>
-          <section className={movie.container}>
-            <div>
+          <section className={movie.main_container}>
+            <div className={movie.image_container}>
               <Image
                 src={movieDetail?.Poster}
                 height={350}
@@ -82,13 +83,21 @@ export default function MovieDetail({ searchParams }) {
             </section>
           </section>
           <section>
-            <div className={movie.container}>
+            <div className={movie.rating_container}>
               <p className={movie.container_main_text}>Maturity Rating:</p>
               <p className={movie.rating_box}>{movieDetail?.Rated}</p>
             </div>
-            <p className={movie.description}>
-              {movieDetail?.Plot}
-            </p>
+            <div className={movie.description_box}>
+              <p className={movie.description}>{movieDetail?.Plot}</p>
+            </div>
+          </section>
+          <section>
+            <div className={movie.rating_container}>
+              <p className={movie.container_main_text}>How did the reviews think?</p>
+              {movieRating.map((rating, i) => (
+                <ReviewRating key={i} rating={rating}/>
+              ))}
+            </div>
           </section>
         </section>
       )}
