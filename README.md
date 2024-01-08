@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mini Netflix Clone
+# A simple Netflix clone project that leverages JavaScript, SCSS, HTML, and React/NextJS to revisit the fundamentals of web development.
 
-## Getting Started
 
-First, run the development server:
+Overview
 
-```bash
+This project serves as a demonstration of foundational web development skills using JavaScript, SCSS, HTML, and React/NextJS. It mimics the basic structure of the Netflix platform, showcasing the ability to create a responsive and interactive user interface.
+
+Features
+
+Movie List Page:
+Display a list of movie poster thumbnails.
+Clicking on a poster redirects to the movie details page.
+
+Movie Details Page:
+Display movie details, including poster, title, description, and rating.
+Fetch movie data from the OMDb API.
+Support loading different movies based on the URL.
+
+Styling:
+Utilize SCSS for styling, showcasing CSS skills without relying on frameworks.
+
+Responsive Design:
+Ensure the application looks good on a variety of screen sizes, from small phones to large screens.
+
+Build System:
+Use a basic build system with tasks for local development and minified distribution assets.
+
+Installation
+
+1. Clone the repository:
+
+git clone https://github.com/asadsidd16/netflix-clone.git
+
+2. Change directory
+
+3. Install dependencies: 
+
+npm install
+
+Usage
+
+1. Start the local development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Open your browser and visit http://localhost:3000 to view the Netflix clone.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- JavaScript
+- SCSS
+- HTML
+- React/NextJS
+- OMDb API
