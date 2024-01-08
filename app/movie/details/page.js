@@ -52,14 +52,14 @@ export default function MovieDetail({ searchParams }) {
       ) : (
         <section>
           <section className={movie.main_container}>
-            <div>
+            <div className={movie.movie_image}>
               {movieDetail.Poster && (
-                <Image
+                <img
                   src={movieDetail?.Poster}
                   height={350}
                   width={250}
                   alt="movie poster"
-                ></Image>
+                ></img>
               )}
             </div>
             <section className={movie.description_container}>
@@ -102,7 +102,7 @@ export default function MovieDetail({ searchParams }) {
           </section>
           <section>
             <p className={movie.container_main_text}>
-              How did the reviews think?
+              What did the reviews think?
             </p>
             <div className={movie.rating_review_container}>
               {movieRating.map((rating, i) => (

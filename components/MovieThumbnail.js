@@ -15,12 +15,12 @@ const MovieThumbnail = ({ poster, movieId }) => {
           },
         }}
       >
-        <Image
+        <img
           src={poster}
           height={300}
           width={200}
           alt="movie poster"
-        ></Image>
+        ></img>
       </Link>
     </div>
   );
