@@ -1,5 +1,4 @@
 # Mini Netflix Clone
-# A simple Netflix clone project that leverages JavaScript, SCSS, HTML, and React/NextJS to revisit the fundamentals of web development.
 
 
 Overview
