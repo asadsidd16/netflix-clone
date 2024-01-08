@@ -37,6 +37,10 @@ git clone https://github.com/asadsidd16/netflix-clone.git
 
 npm install
 
+4. Create a .env.local file in your root directory, add env variable below and get a api key from https://www.omdbapi.com/:
+
+NEXT_PUBLIC_MOVIE_API = API KEY HERE
+
 Usage
 
 1. Start the local development server:

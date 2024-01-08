@@ -3,6 +3,7 @@ import movie from "./movie.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import ReviewRating from "@/components/ReviewRating";
+import Link from "next/link";
 
 export default function MovieDetail({ searchParams }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -38,27 +39,35 @@ export default function MovieDetail({ searchParams }) {
   return (
     <main className={movie.main}>
       <header>
-        <h1 style={{ color: movie.secondaryColor }}>Netflix Clone</h1>
+        <Link
+          href={{
+            pathname: "/",
+          }}
+        >
+          <h1 style={{ color: movie.secondaryColor }}>Netflix Clone</h1>
+        </Link>
       </header>
       {isLoading ? (
         <span className={movie.loader}></span>
       ) : (
         <section>
           <section className={movie.main_container}>
-            <div className={movie.image_container}>
-              <Image
-                src={movieDetail?.Poster}
-                height={350}
-                width={250}
-                alt="movie poster"
-              ></Image>
+            <div>
+              {movieDetail.Poster && (
+                <Image
+                  src={movieDetail?.Poster}
+                  height={350}
+                  width={250}
+                  alt="movie poster"
+                ></Image>
+              )}
             </div>
             <section className={movie.description_container}>
               <div>
                 <h1 className={movie.movie_text}>{movieDetail?.Title}</h1>
-                <p className={movie.container_secondary_text}>
+                <h2 className={movie.container_secondary_text}>
                   {movieDetail?.Year}
-                </p>
+                </h2>
               </div>
               <div>
                 <div className={movie.container}>
@@ -92,10 +101,12 @@ export default function MovieDetail({ searchParams }) {
             </div>
           </section>
           <section>
-            <div className={movie.rating_container}>
-              <p className={movie.container_main_text}>How did the reviews think?</p>
+            <p className={movie.container_main_text}>
+              How did the reviews think?
+            </p>
+            <div className={movie.rating_review_container}>
               {movieRating.map((rating, i) => (
-                <ReviewRating key={i} rating={rating}/>
+                <ReviewRating key={i} rating={rating} />
               ))}
             </div>
           </section>
