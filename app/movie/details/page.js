@@ -1,7 +1,6 @@
 "use client";
 import movie from "./movie.module.scss";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import ReviewRating from "@/components/ReviewRating";
 import Link from "next/link";
 
@@ -70,40 +69,51 @@ export default function MovieDetail({ searchParams }) {
                 </h2>
               </div>
               <div>
-                <div className={movie.container}>
-                  <p className={movie.container_main_text}>Genre:</p>
-                  <p className={movie.container_secondary_text}>
-                    {movieDetail?.Genre}
-                  </p>
-                </div>
-                <div className={movie.container}>
-                  <p className={movie.container_main_text}>Runtime:</p>
-                  <p className={movie.container_secondary_text}>
-                    {movieDetail?.Runtime}
-                  </p>
-                </div>
-                <div className={movie.container}>
-                  <p className={movie.container_main_text}>Cast:</p>
-                  <p className={movie.container_secondary_text}>
-                    {movieDetail?.Actors}
-                  </p>
-                </div>
+                {movieDetail.Genre && (
+                  <div className={movie.container}>
+                    <p className={movie.container_main_text}>Genre:</p>
+                    <p className={movie.container_secondary_text}>
+                      {movieDetail?.Genre}
+                    </p>
+                  </div>
+                )}
+                {movieDetail.Runtime && (
+                  <div className={movie.container}>
+                    <p className={movie.container_main_text}>Runtime:</p>
+                    <p className={movie.container_secondary_text}>
+                      {movieDetail?.Runtime}
+                    </p>
+                  </div>
+                )}
+                {movieDetail.Actors && (
+                  <div className={movie.container}>
+                    <p className={movie.container_main_text}>Cast:</p>
+                    <p className={movie.container_secondary_text}>
+                      {movieDetail?.Actors}
+                    </p>
+                  </div>
+                )}
               </div>
             </section>
           </section>
           <section>
-            <div className={movie.rating_container}>
-              <p className={movie.container_main_text}>Maturity Rating:</p>
-              <p className={movie.rating_box}>{movieDetail?.Rated}</p>
-            </div>
+            {movieDetail.Rated && (
+              <div className={movie.rating_container}>
+                <p className={movie.container_main_text}>Maturity Rating:</p>
+                <p className={movie.rating_box}>{movieDetail?.Rated}</p>
+              </div>
+            )}
             <div className={movie.description_box}>
               <p className={movie.description}>{movieDetail?.Plot}</p>
             </div>
           </section>
           <section>
-            <p className={movie.container_main_text}>
-              What did the reviews think?
-            </p>
+            {movieRating[0] && (
+              <p className={movie.container_main_text}>
+                What did the reviews think?
+              </p>
+            )}
+
             <div className={movie.rating_review_container}>
               {movieRating.map((rating, i) => (
                 <ReviewRating key={i} rating={rating} />
@@ -113,7 +123,7 @@ export default function MovieDetail({ searchParams }) {
         </section>
       )}
       <footer className={movie.footer}>
-        <p style={{ color: movie.whiteColor }}>&copy; 2024 Netflix Clone</p>
+        <p className={movie.footer_text}>&copy; 2024 Netflix Clone</p>
       </footer>
     </main>
   );

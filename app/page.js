@@ -6,6 +6,7 @@ import main from "./main.module.scss";
 export default function Home() {
   const [movieList, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     grabMovie();
@@ -33,7 +34,7 @@ export default function Home() {
         setMovieList(movies);
         setIsLoading(false);
       } else {
-        console.log("No movies found.");
+        setErrorMessage("No movies found.");
       }
     } catch (error) {
       console.log(error);
@@ -49,19 +50,22 @@ export default function Home() {
         <span className={main.loader}></span>
       ) : (
         <section className={main.movieList}>
-          {movieList.map((movie) => (
-            <MovieThumbnail
-              key={movie.imdbID}
-              poster={movie.Poster}
-              movieId={movie.imdbID}
-              movieData={movie}
-            />
-          ))}
+          {movieList ? (
+            movieList.map((movie) => (
+              <MovieThumbnail
+                key={movie.imdbID}
+                poster={movie.Poster}
+                movieId={movie.imdbID}
+              />
+            ))
+          ) : (
+            <p>{errorMessage}</p>
+          )}
         </section>
       )}
 
       <footer className={main.footer}>
-        <p style={{ color: main.whiteColor }}>&copy; 2024 Netflix Clone</p>
+        <p className={main.footer_text}>&copy; 2024 Netflix Clone</p>
       </footer>
     </main>
   );
