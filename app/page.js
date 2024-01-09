@@ -30,7 +30,7 @@ export default function Home() {
 
       if (data.Search && data.Search.length > 0) {
         const movies = data.Search.slice(0, numberOfMovies);
-        console.log("Movies:", movies);
+
         setMovieList(movies);
         setIsLoading(false);
       } else {
@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <main className={main.main}>
       <header>
-        <h1 style={{ color: main.secondaryColor }}>Netflix Clone</h1>
+        <h1 className={main.header_text}>Netflix Clone</h1>
       </header>
       {isLoading ? (
         <span className={main.loader}></span>
@@ -59,7 +59,7 @@ export default function Home() {
               />
             ))
           ) : (
-            <p>{errorMessage}</p>
+            <h1 className={main.error_message}>{errorMessage || "Oops an error occurred. Please try again!"}</h1>
           )}
         </section>
       )}
