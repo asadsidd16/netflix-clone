@@ -16,8 +16,7 @@ const MovieThumbnail = ({ poster, movieId }) => {
       >
         <img
           src={poster}
-          height={300}
-          width={200}
+          style={{ height: 'auto', width: '100%', maxWidth: '250px' }}
           alt="movie poster"
         ></img>
       </Link>

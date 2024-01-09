@@ -90,6 +90,9 @@ $main-text: #777;
     font-size: 20px;
     margin-top: 1rem;
  }
+ @media (min-width: 1921px) {
+  font-size: 50px; 
+ }
 }
 
 
@@ -99,6 +102,9 @@ $main-text: #777;
   font-weight: 500;
   margin: 0.5rem 0.5rem 0.5rem 0;
   color: #777;
+  @media (min-width: 1921px) {
+    font-size: 30px; 
+   }
 }
 
 .container_secondary_text {
@@ -107,6 +113,9 @@ $main-text: #777;
   font-weight: 500;
   margin: 0.5rem 0.5rem 0.5rem 0;
   color: #FFF;
+  @media (min-width: 1921px) {
+    font-size: 30px; 
+   }
 }
 
 .description {
@@ -122,7 +131,11 @@ $main-text: #777;
   @media (max-width: 400px) {
     font-size: 12px;
     margin: 0.5rem;
- }
+  }
+  @media (min-width: 1921px) {
+    font-size: 30px; 
+    line-height: 40px;
+   }
 }
 
 .description_box {
@@ -149,6 +162,9 @@ $main-text: #777;
   border: 1px solid hsla(0,0%,100%,.4);
   padding: 0 0.4em;
   overflow: hidden;
+  @media (min-width: 1921px) {
+    font-size: 30px; 
+   }
 }
 
 .rating_container {
