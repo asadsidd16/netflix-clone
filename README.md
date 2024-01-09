@@ -33,6 +33,8 @@ git clone https://github.com/asadsidd16/netflix-clone.git
 
 2. Change directory
 
+cd netflix-clone
+
 3. Install dependencies: 
 
 npm install
